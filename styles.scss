@@ -1,0 +1,104 @@
+@import './partials/variables';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: fontSize('body');
+}
+
+img {
+  max-width: 100%;
+  width: auto;
+}
+
+.container {
+  header {
+    menu {
+      display: flex;
+      flex-direction: column;
+      list-style: none;
+      gap: 1rem;
+      background: url('https://via.placeholder.com/600x600') no-repeat center center;
+
+      @media screen and (min-width: $tablet) {
+        flex-direction: row;
+        font-size: 2rem;
+        background-image: url('https://via.placeholder.com/900x900');
+      }
+
+      @media screen and (min-width: $desktop) {
+        background-image: url('https://via.placeholder.com/1200x1200');
+      }
+    }
+  }
+
+  main {
+    background-color: yellow;
+    font-size: 10px;
+
+    @media screen and (min-width: $tablet) {
+      background-color: red;
+    }
+
+    @media screen and (min-width: $desktop) {
+      background-color: blue;
+      padding: 2rem;
+
+    }
+
+    h1 {
+      font-size: fontSize('h3');
+
+      @media screen and (min-width: $tablet) {
+        font-size: fontSize('h1');
+      }
+    }
+  
+    section {
+      h2 {
+        font-size: fontSize('h2');
+  
+        small {
+          font-size: fontSize('small');
+        }
+      }
+
+      &.boxes {
+        display: flex;
+        gap: 1rem;
+        flex-direction: column;
+
+        @media screen and (max-width: $tablet) {
+          background-color: pink;
+        }
+
+        @media screen and (min-width: $desktop) {
+          flex-direction: row;
+        }
+
+        .box {
+          width: 100px;
+          height: 100px;
+          background-color: white;
+          font-size: 2rem;
+
+          @media screen and (min-width: $desktop) {
+            &-1 {
+              order: 2;
+            }
+            &-2 {
+              order: 3;
+            }
+            &-3 {
+              order: 1;
+            }
+          }
+        }
+      }
+    }
+  }
+}

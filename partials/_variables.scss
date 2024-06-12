@@ -1,0 +1,30 @@
+$tablet: 600px;
+$desktop: 1000px;
+
+/* Fonts */
+$baseFontSize: 16px;
+$fontScale: 1.25;
+
+$fontSizeBody: $baseFontSize;
+$small: $baseFontSize / $fontScale;
+$heading6: $baseFontSize * $fontScale;
+$heading5: $baseFontSize * pow($fontScale, 2);
+$heading4: $baseFontSize * pow($fontScale, 3);
+$heading3: $baseFontSize * pow($fontScale, 4);
+$heading2: $baseFontSize * pow($fontScale, 5);
+$heading1: $baseFontSize * pow($fontScale, 6);
+
+$fontSizes: (
+  'body': $baseFontSize,
+  'h1': $heading1,
+  'h2': $heading2,
+  'h3': $heading3,
+  'h4': $heading4,
+  'h5': $heading5,
+  'h6': $heading6,
+  'small': $small
+);
+
+@function fontSize($size) {
+  @return map-get($map: $fontSizes, $key: $size);
+}
